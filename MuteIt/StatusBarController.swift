@@ -19,12 +19,12 @@ class StatusBarController {
         statusBar = NSStatusBar.init()
         // Creating a status bar item having a fixed length
         statusItem = statusBar.statusItem(withLength: 28.0)
-        isMute = false
-        setInpuLevel(level: 1)
+        isMute = true
+        setInpuLevel(level: 0)
         
         if let statusBarButton = statusItem.button {
             self.statusBarButton = statusBarButton
-            self.statusBarButton.image = NSImage(named: "UnmuteIcon")
+            self.statusBarButton.image = NSImage(named: "MuteIcon")
             self.statusBarButton.image?.size = NSSize(width: 18.0, height: 18.0)
             self.statusBarButton.image?.isTemplate = true
             self.statusBarButton.action = #selector(toggleMute(sender:))
